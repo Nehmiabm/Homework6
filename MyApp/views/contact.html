@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+   
+  </head>
+  <body>
+    <h1>Contact Us</h1><hr/><br/>
+    <div class="container">
+      <div id="err-div">
+      <ul id="err"></ul>
+      </div>
+    <form class="form" id="contactForm" action="/contactus" method="POST">
+    
+      <div class="row form-group">
+        <label class="col-sm-2 control-label" for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" class="col-sm-5 form-control" placeholder="Full Name" />
+      </div>
+  
+  <div class=" row form-group">
+  <label class="col-sm-2 control-label" for="cType">Type:</label>
+  <select id="cType" class="form-control col-sm-5" name="cType">
+    <option>Suggestion</option>
+    <option>Complaint</option>
+  </select>
+  <input type="hidden" name="_csrf" value="<%=csrftoken%>"/>
+   </div>
+    <div class="row form-group">
+        <label class="col-sm-2 control-label" for="message">Message:</label>
+        <textarea id="message" class="form-control col-sm-5" rows="7" cols="7" name="message" placeholder="Message"></textarea>
+      </div>
+     <button type="button" id="postInfo" class="btn btn-primary" >Submit</button>
+    
+  </form>
+    </div>
+
+    <script src="/javascripts/jquery-3.1.1.min.js"></script>
+    <script src="/javascripts/contact.js"></script>
+  </body>
+</html>
